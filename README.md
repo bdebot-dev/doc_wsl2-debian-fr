@@ -276,7 +276,8 @@ sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove
 - Ensuite, installez PHP 8.3 et les extensions PHP les plus utilisées :
 
 ```
-sudo apt -y install php8.3 libapache2-mod-php8.3 php8.3-{bcmath,bz2,intl,gd,mbstring,mysql,zip,curl,dom,cli,xml}
+sudo apt -y install php8.3 libapache2-mod-php8.3 php8.3-{bcmath,bz2,intl,gd,mbstring,mysql,zip,curl,dom,cli,xml,common,opcache,imagick}
+
 ```
 
 > Vous pouvez utiliser `php -v` pour vérifier la version de PHP, et `php -m` pour vérifier quelles extensions sont installées.
