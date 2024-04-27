@@ -248,35 +248,6 @@ sudo service apache2 restart
 
 ![apache2 infos](screenshots/29.png)
 
-## Installer Node.js
-
-> Pourquoi devons-nous installer Node.js dans notre pile LAMP ? Tout simplement parce que nous allons installer un *mail catcher* : MailDev (qui fonctionne avec Node.js). 
-
-```
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-```
-
-- ⚠️ Fermez le terminal Debian et redémarrez-le.
-
-```
-command -v nvm
-```
-
-> Si cela renvoie `nvm`, ça fonctionne !
-
-- Installez la version stable LTS actuelle de Node.js :
-
-```
-nvm install --lts
-```
-
-- Installez la version actuelle de Node.js : 
-```
-nvm install node
-```
-
-> Lister les versions de Node qui sont installées : `nvm ls`.
-
 
 ## Installer PHP
 
@@ -553,6 +524,34 @@ fi
 - Vous pouvez minimiser le terminal Debian, et il n'est plus nécessaire d'y toucher tant que vous développez. Ce terminal, vous ne pouvez pas l'utiliser car il fait tourner MailDev et vous n'avez donc pas la main pour entrer de nouvelles lignes de commande. Pour utiliser un terminal, dans VSCode, dans le menu `Terminal`, choisissez `Nouveau terminal` : un terminal Debian intégré s'ouvre.
 
 ![VSCode - Terminal](screenshots/30.png)
+
+
+## Installer Node.js
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+```
+
+- ⚠️ Fermez le terminal Debian et redémarrez-le.
+
+```
+command -v nvm
+```
+
+> Si cela renvoie `nvm`, ça fonctionne !
+
+- Installez la version stable LTS actuelle de Node.js :
+
+```
+nvm install --lts
+```
+
+- Installez la version actuelle de Node.js : 
+```
+nvm install node
+```
+
+> Lister les versions de Node qui sont installées : `nvm ls`.
 
 ## Resources
 
