@@ -210,21 +210,17 @@ sudo nano /etc/apache2/sites-enabled/000-default.conf
 sudo chgrp $(id -u) -R /var/www && sudo chown www-data -R /var/www && sudo chmod 775 -R /var/www
 ```
 
-- Renommez le répertoire `html` en `LAMP_setup`:
+- Renommez le répertoire `html` en `00_setup`:
 
 ```
-mv /var/www/html /var/www/LAMP_setup
+mv /var/www/html /var/www/00_setup
 ```
 
 - Et le fichier `index.html` en `apache2.html`:
 
 ```
-mv /var/www/LAMP_setup/index.html /var/www/LAMP_setup/apache2.html
+mv /var/www/00_setup/index.html /var/www/00_setup/apache2.html
 ```
-
-- Dans la barre d'URL de votre navigateur, tapez `http://localhost/LAMP_setup/apache2.html` :
-
-![apache2 infos](screenshots/29.png)
 
 - L'expérience m'a appris que devons faire une dernière chose. Dans votre terminal, tapez : 
 
@@ -235,11 +231,15 @@ sudo nano /etc/apache2/apache2.conf
 - Sur la dernière ligne du fichier, collez :
 
 ```
+# Disables accept filters for HTTPS connections, making Apache accept connections immediately without waiting for data.
 AcceptFilter https none
 ```
 
 > Appuyez sur les touches `CTRL` + `O` de votre clavier pour écraser, confirmez en appuyant sur `Entrer`, et quittez nano en appuyant sur `CTRL` + `X`.
 
+- Dans la barre d'URL de votre navigateur, tapez `http://localhost/00_setup/apache2.html` :
+
+![apache2 infos](screenshots/29.png)
 
 ## Installer Node.js
 
