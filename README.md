@@ -70,6 +70,12 @@ wsl --install -d Debian
 sudo apt install -y software-properties-common curl wget openssh-server net-tools
 ```
 
+- Vérifier la version installée de Debian :
+```
+cat /etc/debian_version
+```
+  
+
 ### [Optionnel] Ne plus avoir à taper le mot de passe
 
 ```
