@@ -237,6 +237,13 @@ AcceptFilter https none
 
 > Appuyez sur les touches `CTRL` + `O` de votre clavier pour écraser, confirmez en appuyant sur `Entrer`, et quittez nano en appuyant sur `CTRL` + `X`.
 
+-
+- Re-démarrez le service : 
+
+```
+sudo service apache2 restart
+```
+
 - Dans la barre d'URL de votre navigateur, tapez `http://localhost/00_setup/apache2.html` :
 
 ![apache2 infos](screenshots/29.png)
