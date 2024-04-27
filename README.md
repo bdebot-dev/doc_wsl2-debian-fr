@@ -293,7 +293,7 @@ sudo service apache2 restart
 echo -e "<?php\n\nphpinfo();\n\n// EOF" >> /var/www/00_setup/phpinfo.php
 ```
 
-- Dans la barre d'URL de votre navigateur, tapez `http://localhost/LAMP_setup/phpinfo.php` :
+- Dans la barre d'URL de votre navigateur, tapez `http://localhost/00_setup/phpinfo.php` :
 
 ![php infos](screenshots/28.png)
 
@@ -301,7 +301,7 @@ echo -e "<?php\n\nphpinfo();\n\n// EOF" >> /var/www/00_setup/phpinfo.php
 ### Les erreurs en PHP
 
 ```
-sudo nano /etc/php/8.1/apache2/php.ini
+sudo nano /etc/php/8.3/apache2/php.ini
 ```
 
 - Trouvez ces 2 lignes dans le fichier :
