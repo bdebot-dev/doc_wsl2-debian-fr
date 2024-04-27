@@ -237,7 +237,7 @@ AcceptFilter https none
 
 > Appuyez sur les touches `CTRL` + `O` de votre clavier pour écraser, confirmez en appuyant sur `Entrer`, et quittez nano en appuyant sur `CTRL` + `X`.
 
--
+
 - Re-démarrez le service : 
 
 ```
@@ -273,10 +273,10 @@ sudo sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > 
 sudo apt update && sudo apt -y upgrade && sudo apt -y autoremove
 ```
 
-- Ensuite, installez PHP 8.1 et les extensions PHP les plus utilisées :
+- Ensuite, installez PHP 8.3 et les extensions PHP les plus utilisées :
 
 ```
-sudo apt -y install php8.1 libapache2-mod-php8.1 php8.1-{bcmath,bz2,intl,gd,mbstring,mysql,zip,curl,dom,cli,xml}
+sudo apt -y install php8.3 libapache2-mod-php8.3 php8.3-{bcmath,bz2,intl,gd,mbstring,mysql,zip,curl,dom,cli,xml}
 ```
 
 > Vous pouvez utiliser `php -v` pour vérifier la version de PHP, et `php -m` pour vérifier quelles extensions sont installées.
@@ -290,7 +290,7 @@ sudo service apache2 restart
 - Vous pouvez créer un fichier pour afficher votre configuration PHP :
 
 ```bash
-echo -e "<?php\n\nphpinfo();\n\n// EOF" >> /var/www/LAMP_setup/phpinfo.php
+echo -e "<?php\n\nphpinfo();\n\n// EOF" >> /var/www/00_setup/phpinfo.php
 ```
 
 - Dans la barre d'URL de votre navigateur, tapez `http://localhost/LAMP_setup/phpinfo.php` :
@@ -323,62 +323,6 @@ display_errors = On
 
 > Afficher les journaux d'erreurs lorsque vous déboguez votre code en PHP : `cat /var/log/apache2/error.log`
 
-
-### Install Postfix
-
-```
-sudo apt install -y postfix
-```
-
-> Choisissez "Site Internet", puis conservez les valeurs par défaut.
-
-![Install Postfix](screenshots/11.png)
-
-- Nous devons changer `relayhost` dans le fichier de configuration de Postfix :
-
-```
-sudo nano /etc/postfix/main.cf
-```
-
-- Trouvez la ligne `relayhost` (normalement, il n'y a pas encore de valeur) :
-
-![Postfix relayhost](screenshots/12.png)
-
-- Changez la valeur de `relayhost` en `127.0.0.1:1025`.
-
-![Postfix relayhost - change value](screenshots/13.png)
-
-> Appuyez sur les touches `CTRL` + `O` de votre clavier pour écraser, confirmez en appuyant sur `Entrer`, et quittez nano en appuyant sur `CTRL` + `X`.
-
-### Installer MailDev
-
-```
-npm install -g maildev
-```
-
-- Démarrez MailDev: 
-
-```
-maildev --ip 127.0.0.1
-```
-
-![MailDev](screenshots/14.png)
-
-- Dans la **barre URL** de votre navigateur, tapez :
-
-```
-http://127.0.0.1:1080
-```
-
-![MailDev GUI](screenshots/15.png)
-
-- ⚠️ Maintenant, quittez le terminal. Pour une raison qui dépasse mon entendement, lorsque vous fermez le terminal et le redémarrez, puis que vous essayez de lancer MailDev, tout se passe comme s'il n'était pas installé. Pourquoi ? **Je ne sais pas !** La solution... réinstallez MailDev une seconde fois avec la commande `npm install -g maildev`, puis il n'y a normalement plus de problème.
-
-```
-npm install -g maildev
-```
-
->  Ok, ça marche. On en aura besoin quand on développera en PHP... Pour l'instant, vous pouvez fermer MailDev en appuyant sur `CTRL` + `C`.
 
 
 ## Installer Adminer
